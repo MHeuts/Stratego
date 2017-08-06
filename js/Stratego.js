@@ -23,6 +23,7 @@ Stratego.prototype.show = function (controllerName, data = null){
 };
 
 Stratego.prototype.setApi = function(key){
-    this.Api = new strategoApi(key);
+    this.Api = new StrategoApi(key);
+    this.Api.getMe();
 }
 

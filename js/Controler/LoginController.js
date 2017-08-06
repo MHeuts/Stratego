@@ -21,7 +21,7 @@ LoginController.prototype.setKey = function (){
     let key = this.view.input.value;
     if (key !== ""){
         this.stratego.setApi(key);
-        this.stratego.show("Lobby")
+        this.stratego.show("Lobby");
     }
 
 }
