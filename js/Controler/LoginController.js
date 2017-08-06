@@ -1,6 +1,7 @@
-function LoginController(){
+function LoginController(Stratego){
 
-    this.view = new LoginView();
+    this.stratego = Stratego;
+    this.view = new LoginView(this.stratego.container);
 
 }
 
