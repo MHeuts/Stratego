@@ -1,0 +1,4 @@
+function LoginController(){
+
+    return key;
+}
