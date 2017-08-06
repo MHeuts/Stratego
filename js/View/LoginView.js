@@ -1,16 +1,17 @@
 function LoginView(container){
     
-    this.objects = {};
     this.container = container;
+    this.objects = {};
 
+    this.input = document.createElement('input');
+    this.input.type = "text";
+    this.input.value = "test";
+    this.button = document.createElement('button');
+    this.button.innerHTML = "submit";
 };
 
 LoginView.prototype.show = function(){
-    var input = document.createElement('input');
-    input.type = "text";
-    input.value = "ZjfjwPlX4eYydG9FRqytDBPg8AfhQvhN";
-    this.container.appendChild(input);
-    var button = document.createElement('button');
-    button.innerHTML= "submit"
-    this.container.appendChild(button);
+    
+    this.container.appendChild(this.input);
+    this.container.appendChild(this.button);
 }

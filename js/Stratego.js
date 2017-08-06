@@ -3,11 +3,11 @@ function Stratego(container) {
 
     this.container = document.getElementById(container);
 
-    this.Api = null;
+    this.ApiKey = "ZjfjwPlX4eYydG9FRqytDBPg8AfhQvhN";
 
     this.controllers = {
         "Login": new LoginController(this),
-        //"Lobby": new LobbyController(this),
+        "Lobby": new LobbyController(this),
         //"Game": new GameController(this)
     };
 
@@ -21,4 +21,8 @@ Stratego.prototype.show = function (controllerName, data = null){
     let controller = this.controllers[controllerName];
     controller.show();
 };
+
+Stratego.prototype.setApi = function(key){
+    this.Api = new strategoApi(key);
+}
 
