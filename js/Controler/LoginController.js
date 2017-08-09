@@ -9,19 +9,20 @@ function LoginController(Stratego){
     self.view.button.addEventListener('click', function(){
         self.setKey();
     });
-    
 }
 
 LoginController.prototype.show = function(){
     this.view.show();
-
 }
 
 LoginController.prototype.setKey = function (){
     let key = this.view.input.value;
     if (key !== ""){
-        this.stratego.setApi(key);
-        this.stratego.show("Lobby");
+        if(this.stratego.setApi(key) != false){
+            this.stratego.show("Lobby");
+        }
+        else{
+            this.view.showWarning();
+        }
     }
-
 }

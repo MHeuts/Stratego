@@ -5,6 +5,8 @@ function Stratego(container) {
 
     this.ApiKey = "ZjfjwPlX4eYydG9FRqytDBPg8AfhQvhN";
 
+    this.user = new userModel();
+
     this.controllers = {
         "Login": new LoginController(this),
         "Lobby": new LobbyController(this),
@@ -24,6 +26,9 @@ Stratego.prototype.show = function (controllerName, data = null){
 
 Stratego.prototype.setApi = function(key){
     this.Api = new StrategoApi(key);
-    this.Api.getMe();
+    this.user.setUser(this.Api.getMe());
+    if(this.User.getUser == null){
+        return false;
+    }
 }
 

@@ -15,7 +15,7 @@ StrategoApi.prototype.getMe = function(){
     $.ajax({
         url: this.url + '/users/me' + this.ApiKey
     }).done(function(me){
-        console.log('me', me)
+        return me;
     });
 }
 

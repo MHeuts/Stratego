@@ -15,3 +15,9 @@ LoginView.prototype.show = function(){
     this.container.appendChild(this.input);
     this.container.appendChild(this.button);
 }
+
+LoginView.prototype.showWarning = function(){
+    let warning = document.createElement("p");
+    warning.innerHTML = "Geen geldig api key";
+    this.container.appendChild(warning);
+}
