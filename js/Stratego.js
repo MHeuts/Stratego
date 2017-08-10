@@ -20,9 +20,11 @@ class Stratego{
         let self = this;
         self.Api.key = key;
         self.Api.getMe(function(data){
+            console.log(data);
             if(data.id != null){
-                console.log(self.User);
+                console.log(self.User[name]);
                 self.User.newUser = data;
+                console.log(self.User);
                 self.show("Lobby");
             }
         });

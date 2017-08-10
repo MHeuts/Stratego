@@ -12,15 +12,19 @@ class StrategoApi{
         $.ajax({
             url: this.url + '/users/me' + this.ApiKey
         }).done(function(data){
+            console.log(data);
             callback(data);
         });
     }
 
-    get getGames(){
+    getGames(callback){
         $.ajax({
             url: this.url + '/games' + this.ApiKey
-        }).done(function(games) {
-            console.log('Games:', games);
+        }).done(function(data) {
+            console.log(data);
+            callback(data);
         });
     }
+
+    
 }
