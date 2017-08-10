@@ -1,6 +1,6 @@
 function LoginView(container){
-    
-    this.container = container;
+    console.log(container);
+    this.container = document.getElementById(container);
     this.objects = {};
 
     this.input = document.createElement('input');
@@ -11,13 +11,9 @@ function LoginView(container){
 };
 
 LoginView.prototype.show = function(){
+
+    this.container.innerHTML = "";
     
     this.container.appendChild(this.input);
     this.container.appendChild(this.button);
-}
-
-LoginView.prototype.showWarning = function(){
-    let warning = document.createElement("p");
-    warning.innerHTML = "Geen geldig api key";
-    this.container.appendChild(warning);
 }

@@ -1,34 +1,30 @@
-function Stratego(container) {
-    
+class Stratego{
+    constructor(container){
+        this.apiKey = "ZjfjwPlX4eYydG9FRqytDBPg8AfhQvhN";
+        this.Api = new StrategoApi();
+        this.container = container;
+        this.User = new userModel();
+        this.controllers = {
+            "Login": new LoginController(this),
+            "Lobby": new LobbyController(this),
+            //"Game": new GameController(this)
+        };
+    }
 
-    this.container = document.getElementById(container);
+    show(controllerName){
+        let controller = this.controllers[controllerName]
+        controller.show();
+    }
 
-    this.ApiKey = "ZjfjwPlX4eYydG9FRqytDBPg8AfhQvhN";
-
-    this.user = new userModel();
-
-    this.controllers = {
-        "Login": new LoginController(this),
-        "Lobby": new LobbyController(this),
-        //"Game": new GameController(this)
-    };
-
-
-    //this.Api = new Api();
-
-    this.show('Login');
-};
-
-Stratego.prototype.show = function (controllerName, data = null){
-    let controller = this.controllers[controllerName];
-    controller.show();
-};
-
-Stratego.prototype.setApi = function(key){
-    this.Api = new StrategoApi(key);
-    this.user.setUser(this.Api.getMe());
-    if(this.User.getUser == null){
-        return false;
+    login(key){
+        let self = this;
+        self.Api.key = key;
+        self.Api.getMe(function(data){
+            if(data.id != null){
+                console.log(self.User);
+                self.User.newUser = data;
+                self.show("Lobby");
+            }
+        });
     }
 }
-

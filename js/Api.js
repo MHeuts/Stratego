@@ -1,28 +1,26 @@
+class StrategoApi{
+    constructor(){
+        this.url = 'https://strategoavans.herokuapp.com/api';
+    }
 
-/**
- * 
- * @param {string} key 
- */
+    set key(key){
+        this.ApiKey = "?api_key=" + key;
+        console.log(this.ApiKey);
+    }
 
-function StrategoApi(key){
-    this.ApiKey = '?api_key=' + key;
-    console.log(this.ApiKey);
+    getMe(callback){
+        $.ajax({
+            url: this.url + '/users/me' + this.ApiKey
+        }).done(function(data){
+            callback(data);
+        });
+    }
 
-    this.url = 'https://strategoavans.herokuapp.com/api';
+    get getGames(){
+        $.ajax({
+            url: this.url + '/games' + this.ApiKey
+        }).done(function(games) {
+            console.log('Games:', games);
+        });
+    }
 }
-
-StrategoApi.prototype.getMe = function(){
-    $.ajax({
-        url: this.url + '/users/me' + this.ApiKey
-    }).done(function(me){
-        return me;
-    });
-}
-
-StrategoApi.prototype.getGames = function(){
-    $.ajax({
-        url: this.url + '/games' + this.ApiKey
-    }).done(function(games) {
-        console.log('Games:', games);
-    });
-};

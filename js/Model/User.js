@@ -1,12 +1,11 @@
-function userModel(user){
-    var user = {}
-};
+class userModel{
+    constructor(){
+        this.id = 0;
+        this.name = "";
+    }
 
-user.prototype.setUser = function(me){
-    user.name = me.name;
-    user.id = me.id;
-};
-
-user.prototype.getUser = function(){
-    return(user);
-};
+    set newUser(user){
+        this.id = user.id;
+        this.name = user.name;
+    }
+}

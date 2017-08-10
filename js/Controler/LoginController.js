@@ -1,28 +1,21 @@
-function LoginController(Stratego){
+class LoginController{
+    constructor(stratego){
+        let self = this;
+        self.stratego = stratego;
+        self.view = new LoginView(this.stratego.container);
 
-    let self = this;
-    self.stratego = Stratego;
-    self.view = new LoginView(this.stratego.container);
+        self.view.input.value = self.stratego.apiKey;
 
-    self.view.input.value = this.stratego.ApiKey;
+        self.view.button.addEventListener('click', function(){
+            let key = self.view.input.value;
+            if (key !== ""){
+                console.log(key);
+                self.stratego.login(key);
+            }
+        });
+    }
 
-    self.view.button.addEventListener('click', function(){
-        self.setKey();
-    });
-}
-
-LoginController.prototype.show = function(){
-    this.view.show();
-}
-
-LoginController.prototype.setKey = function (){
-    let key = this.view.input.value;
-    if (key !== ""){
-        if(this.stratego.setApi(key) != false){
-            this.stratego.show("Lobby");
-        }
-        else{
-            this.view.showWarning();
-        }
+    show(){
+        this.view.show();
     }
 }
