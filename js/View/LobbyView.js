@@ -12,4 +12,8 @@ class lobbyView{
         console.log("loby");
         this.container.innerHTML = "";
     }
+    
+    buildList(games){
+        
+    }
 }
