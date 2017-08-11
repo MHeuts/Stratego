@@ -25,6 +25,27 @@ class StrategoApi{
             callback(data);
         });
     }
+    
+    createGamevsAi(callback){
+        $.ajax({
+            url: this.url + '/games/' + id + this.ApiKey,
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ai: true})
+        }).done(function(data) {
+            console.log(data);
+            callback(data);
+        });
+    }
+    
+    getGameById(id, callback){
+        $.ajax({
+            url: this.url + '/games/' + id + this.ApiKey
+        }).done(function(data) {
+            console.log(data);
+            callback(data);
+        });
+    }
 
     
 }
