@@ -1,7 +1,12 @@
 class LobbyController{
     constructor(stratego){
-        this.stratego = stratego;
-        this.view = new lobbyView(this.stratego.container);
+        self = this;
+        self.stratego = stratego;
+        self.view = new lobbyView(this.stratego.container);
+
+        self.view.vsAi.addEventListener('click', function(){
+            self.createVsAi();
+        });
     }
 
 
@@ -15,5 +20,20 @@ class LobbyController{
                 self.view.buildList(data);
             }
         });
+
+
     }
+
+    createVsAi(){
+        console.log("create game");
+        let self = this;
+
+        self.stratego.Api.createGamevsAi(function(game){
+            self.stratego.Game.setGame = game;
+            self.stratego.view("Game");
+        });
+    }
+
+    
+
 }

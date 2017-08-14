@@ -28,10 +28,10 @@ class StrategoApi{
     
     createGamevsAi(callback){
         $.ajax({
-            url: this.url + '/games/' + id + this.ApiKey,
+            url: this.url + '/games' + this.ApiKey,
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ai: true})
+            data: JSON.stringify({"ai": true})
         }).done(function(data) {
             console.log(data);
             callback(data);
