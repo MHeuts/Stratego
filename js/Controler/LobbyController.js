@@ -17,11 +17,10 @@ class LobbyController{
         self.view.show();
         self.stratego.Api.getGames(function(data){
             if(data.length > 0){
+                console.log(data);
                 self.view.buildList(data);
             }
         });
-
-
     }
 
     createVsAi(){
@@ -30,10 +29,7 @@ class LobbyController{
 
         self.stratego.Api.createGamevsAi(function(game){
             self.stratego.Game.setGame = game;
-            self.stratego.view("Game");
+            self.stratego.show("Game");
         });
     }
-
-    
-
 }

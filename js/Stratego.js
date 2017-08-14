@@ -8,7 +8,7 @@ class Stratego{
         this.controllers = {
             "Login": new LoginController(this),
             "Lobby": new LobbyController(this),
-            //"Game": new GameController(this)
+            "Game": new GameController(this)
         };
     }
 

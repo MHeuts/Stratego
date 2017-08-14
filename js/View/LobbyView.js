@@ -23,8 +23,9 @@ class lobbyView{
     }
     
     buildList(games){
-        games.foreach(function(game){
+        console.log(games);
+        for(var game in games){
             console.log(game);
-        })
+        }
     }
 }
