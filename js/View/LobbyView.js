@@ -20,16 +20,6 @@ class lobbyView{
     }
 
     addgametoList(listItem){
-        this.list.appendChild(this.listItem);
-    }
-    
-    buildList(games){
-        console.log("games: ", games);
-        for(var index in games){
-            var game = games[index];
-            this.listItem = document.createElement('li');
-            this.listItem.innerHTML = game.id + ", VS " + game.opponent;
-            this.list.appendChild(this.listItem);
-        }
+        this.list.appendChild(listItem);
     }
 }
