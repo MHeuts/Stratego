@@ -5,8 +5,6 @@ class lobbyView{
         this.welcome = document.createElement("h2");
         this.list = document.createElement('table');
         this.list.className = "gameList";
-        this.continue = document.createElement('button');
-        this.continue.innerHTML = "Continue";
         this.vsAi = document.createElement('button');
         this.vsAi.innerHTML = "New game: vs AI";
         this.vsPlayer = document.createElement('button');
@@ -17,15 +15,21 @@ class lobbyView{
         this.container.innerHTML = "";
         this.container.appendChild(this.welcome);
         this.container.appendChild(this.list);
-        this.container.appendChild(this.continue);
         this.container.appendChild(this.vsAi);
         this.container.appendChild(this.vsPlayer);
     }
+
+    addgametoList(listItem){
+        this.list.appendChild(this.listItem);
+    }
     
     buildList(games){
-        console.log(games);
-        for(var game in games){
-            console.log(game);
+        console.log("games: ", games);
+        for(var index in games){
+            var game = games[index];
+            this.listItem = document.createElement('li');
+            this.listItem.innerHTML = game.id + ", VS " + game.opponent;
+            this.list.appendChild(this.listItem);
         }
     }
 }

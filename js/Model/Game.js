@@ -1,9 +1,9 @@
 class gameModel{
 
 
-    set setGame(Game){
+    set openGame(Game){
         console.log(Game);
-        this.currentGame = Game;
+        this.id = Game.id;
     }
 
 }

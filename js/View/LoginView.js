@@ -1,5 +1,4 @@
 function LoginView(container){
-    console.log(container);
     this.container = document.getElementById(container);
     this.objects = {};
 

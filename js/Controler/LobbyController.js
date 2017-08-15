@@ -28,7 +28,7 @@ class LobbyController{
         let self = this;
 
         self.stratego.Api.createGamevsAi(function(game){
-            self.stratego.Game.setGame = game;
+            self.stratego.Game.openGame = game;
             self.stratego.show("Game");
         });
     }

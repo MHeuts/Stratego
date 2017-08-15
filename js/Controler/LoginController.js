@@ -3,13 +3,11 @@ class LoginController{
         let self = this;
         self.stratego = stratego;
         self.view = new LoginView(this.stratego.container);
-
         self.view.input.value = self.stratego.apiKey;
 
         self.view.button.addEventListener('click', function(){
             let key = self.view.input.value;
             if (key !== ""){
-                console.log(key);
                 self.stratego.login(key);
             }
         });
