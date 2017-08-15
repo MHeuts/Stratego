@@ -12,7 +12,7 @@ class StrategoApi{
         $.ajax({
             url: this.url + '/users/me' + this.ApiKey
         }).done(function(data){
-            console.log(data);
+            console.log("data);
             callback(data);
         });
     }
@@ -31,9 +31,21 @@ class StrategoApi{
             url: this.url + '/games' + this.ApiKey,
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({"ai": true})
+            data: JSON.stringify({ai: true})
         }).done(function(data) {
-            console.log(data);
+            console.log(games: ", data);
+            callback(data);
+        });
+    }
+    
+    createGamevsUser(callback){
+        $.ajax({
+            url: this.url + '/games' + this.ApiKey,
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ai: false})
+        }).done(function(data) {
+            console.log(games: ", data);
             callback(data);
         });
     }
