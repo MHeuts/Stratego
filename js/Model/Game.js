@@ -8,4 +8,8 @@ class gameModel{
         this.state = Game.state;
     }
 
+    set board(Board){
+        this.board = Board;
+    }
+
 }
