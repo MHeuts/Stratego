@@ -37,6 +37,27 @@ class StrategoApi{
             callback(data);
         });
     }
+
+    setMove(id, move, callback){
+        $ajax({
+            url: this.url + '/games/' + id + '/moves' + this.ApiKey,
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(move)
+        }).done(function (data) {
+            console.log(data);
+            callback(data);
+        })
+    }
+
+    getMoves(id, callback){
+        $ajax({
+            url:this.url + '/games/' + id + '/moves' + this.ApiKey
+        }).done(function (data) {
+            console.log(data);
+            callback(data);
+        })
+    }
     
     createGamevsUser(callback){
         $.ajax({

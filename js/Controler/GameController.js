@@ -16,8 +16,8 @@ class GameController{
         this.setHeader();
         this.View.show();
         if(this.Stratego.Game.state == "waiting_for_pieces"){
-            if (confirm('Do you wish to use a random board?')){
-                this.setUpRandom();
+            if (confirm('Do you wish to use a standard board?')){
+                this.setUpStandard();
             }else{
                 self.setUpBoard();
             }
@@ -30,7 +30,7 @@ class GameController{
         this.View.Header.innerHTML = "GameId: " + this.Stratego.Game.id + " | VS: " + this.Stratego.Game.opponent + ", state: " + this.Stratego.Game.state;
     }
 
-    setUpRandom(){
+    setUpStandard(){
         let self = this;
         let board = [
             [
@@ -90,11 +90,6 @@ class GameController{
             self.setHeader();
 
         });
-        // for(var x = 0; x <= 4; x++) {
-        //     for(var y = 0; y <= 10; y++) {
-        //     }
-        //
-        // }
     }
 
     //todo

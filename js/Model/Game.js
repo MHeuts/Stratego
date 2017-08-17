@@ -9,4 +9,12 @@ class gameModel{
         this.startBoard = Game.start_board;
         this.board = Game.board;
     }
+
+    set setMoves(moves){
+        this.moves = moves;
+    }
+
+    viewState(move){
+
+    }
 }
