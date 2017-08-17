@@ -59,5 +59,15 @@ class StrategoApi{
         });
     }
 
-    
+    setStartBoard(id, board, callback){
+        $.ajax({
+            url: this.url + '/games/' + id + '/start_board/' + this.ApiKey,
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(board)
+        }).done(function (data) {
+            console.log(data);
+            callback(data);
+        })
+    }
 }
