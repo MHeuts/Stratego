@@ -2,6 +2,8 @@ class GameView {
     constructor(container){
         this.container = document.getElementById(container);
         this.Board = document.createElement('table');
+        this.Board.style.backgroundImage = "url('../Stratego/img/board.jpg')"
+        this.Board.style.backgroundSize = "810px 810px";
         this.Box = document.createElement('table');
         this.commit = document.createElement('button');
         this.Header = document.createElement('h2');
@@ -10,12 +12,15 @@ class GameView {
     }
 
     show(){
-        for(var x = 0; x<=10 ; x++){
+        this.Board.innerHTML = "";
+        for(var x = 0; x<=9 ; x++){
             let row = document.createElement('tr');
             this.Board.appendChild(row);
-            for( var y = 0; y<=10; y++){
+            for( var y = 0; y<=9; y++){
                 let field = document.createElement('td');
                 field.id = x + ", " + y;
+                field.style.width = "75px";
+                field.style.height = "75px";
                 row.appendChild(field);
             }
             this.Board.appendChild(row);
@@ -33,13 +38,20 @@ class GameView {
             var row = Board[Rowindex];
             for(var ColumnIndex in row) {
                 var piece = row[ColumnIndex];
-                console.log("piece = ",piece);
                 var id = Rowindex + ", " + ColumnIndex;
-                console.log("Index = ", id);
                 if (piece === "O") {
-                    console.log("set piece");
                     var image = document.createElement('img');
                     image.src = "../Stratego/img/blue.png"
+                    image.style.height = '75px';
+                    image.style.width = '75px';
+
+                    document.getElementById(Rowindex + ", " + ColumnIndex).appendChild(image);
+                }
+                else if(piece != 0){
+                    var image = document.createElement('img');
+                    image.src = "../Stratego/img/red_" + piece + ".png"
+                    image.style.height = '75px';
+                    image.style.width = '75px';
 
                     document.getElementById(Rowindex + ", " + ColumnIndex).appendChild(image);
                 }

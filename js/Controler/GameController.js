@@ -1,17 +1,19 @@
 class GameController{
     constructor(Stratego){
+        let self = this;
         this.Stratego = Stratego;
         this.View = new GameView(this.Stratego.container);
-    }
 
+        this.View.back.addEventListener('click', function () {
+            self.View.Board.innerHTML = "";
+            self.Stratego.show("Lobby");
+        });
+    }
 
     show(){
         let self = this;
         console.log("gamescreen: ", this.Stratego.Game.id);
         this.setHeader();
-        this.View.back.addEventListener('click', function () {
-           self.Stratego.show("Lobby");
-        });
         this.View.show();
         if(this.Stratego.Game.state == "waiting_for_pieces"){
             if (confirm('Do you wish to use a random board?')){
@@ -103,6 +105,7 @@ class GameController{
     runGame(){
         console.log(this.Stratego.Game.board);
         this.View.buildBoard(this.Stratego.Game.board);
+        this.View.commit.innerHTML = "Make Move";
     }
 
     makeMove(){

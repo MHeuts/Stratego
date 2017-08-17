@@ -9,6 +9,4 @@ class gameModel{
         this.startBoard = Game.start_board;
         this.board = Game.board;
     }
-
-
 }

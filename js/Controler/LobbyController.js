@@ -16,10 +16,13 @@ class LobbyController{
 
     show(){
         this.view.welcome.innerHTML = "Welcome: " + this.stratego.User["name"];
-        this.view.list.innerHTML = "";
+        while(this.view.list.firstChild){
+            this.view.list.removeChild(this.view.list.firstChild);
+        }
         let self = this;
-        self.view.show();
+        console.log("Show Games");
         self.stratego.Api.getGames(function(data){
+            console.log("games", data);
             for(var index in data){
                 (function() {
                     let game = data[index];
@@ -34,6 +37,8 @@ class LobbyController{
                 }());
             }
         });
+
+        self.view.show();
     }
 
 

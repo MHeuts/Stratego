@@ -14,6 +14,7 @@ class LoginController{
     }
 
     show(){
+        console.log("Login");
         this.view.show();
     }
 }
