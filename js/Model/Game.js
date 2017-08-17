@@ -4,12 +4,17 @@ class gameModel{
         console.log(Game);
         this.id = Game.id;
         this.opponent = Game.opponent;
-        this.winner = Game.Winner;
+        this.winner = Game.winner;
         this.state = Game.state;
+        this.startBoard = Game.start_board;
+        this.board = Game.board;
     }
 
-    set board(Board){
-        this.board = Board;
+    set setMoves(moves){
+        this.moves = moves;
     }
 
+    viewState(move){
+
+    }
 }

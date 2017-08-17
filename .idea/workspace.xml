@@ -1,7 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8356fe90-38ff-4491-ba75-5553511a5516" name="Default" comment="" />
+    <list default="true" id="8356fe90-38ff-4491-ba75-5553511a5516" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_B.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_F.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._blue_S.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._board.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_B.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_F.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/__MACOSX/._red_S.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_B.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_F.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blue_S.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/board.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_B.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_F.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/red_S.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/Model/Piece.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue.png" afterPath="$PROJECT_DIR$/img/blue.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue_1.png" afterPath="$PROJECT_DIR$/img/blue_1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue_2.png" afterPath="$PROJECT_DIR$/img/blue_2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue_3.png" afterPath="$PROJECT_DIR$/img/blue_3.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue_4.png" afterPath="$PROJECT_DIR$/img/blue_4.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue_5.png" afterPath="$PROJECT_DIR$/img/blue_5.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue_6.png" afterPath="$PROJECT_DIR$/img/blue_6.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue_7.png" afterPath="$PROJECT_DIR$/img/blue_7.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue_8.png" afterPath="$PROJECT_DIR$/img/blue_8.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue_9.png" afterPath="$PROJECT_DIR$/img/blue_9.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue_B.png" afterPath="$PROJECT_DIR$/img/blue_B.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stratego_images/blue_F.png" afterPath="$PROJECT_DIR$/img/blue_F.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Api.js" afterPath="$PROJECT_DIR$/js/Api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Controler/GameController.js" afterPath="$PROJECT_DIR$/js/Controler/GameController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Controler/LobbyController.js" afterPath="$PROJECT_DIR$/js/Controler/LobbyController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Controler/LoginController.js" afterPath="$PROJECT_DIR$/js/Controler/LoginController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Model/Game.js" afterPath="$PROJECT_DIR$/js/Model/Game.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/View/GameView.js" afterPath="$PROJECT_DIR$/js/View/GameView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/View/LobbyView.js" afterPath="$PROJECT_DIR$/js/View/LobbyView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.html" afterPath="$PROJECT_DIR$/main.html" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,24 +93,21 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1502986597000" expanded="true" signature="48:165" ph="{...}" />
+              </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blue_4.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stratego_images/blue_4.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="GameController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/Controler/GameController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="240">
+              <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+              <folding>
+                <marker date="1502986597000" expanded="true" signature="47:57" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,8 +115,28 @@
       <file leaf-file-name="GameView.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/View/GameView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="555">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/Model/Game.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="97" lean-forward="false" selection-start-line="4" selection-start-column="97" selection-end-line="4" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -79,10 +170,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/Model/Game.js" />
         <option value="$PROJECT_DIR$/js/Style.css" />
         <option value="$PROJECT_DIR$/main.html" />
         <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/js/Model/Game.js" />
         <option value="$PROJECT_DIR$/js/View/GameView.js" />
       </list>
     </option>
@@ -136,6 +227,18 @@
               <item name="Stratego" type="b2602c69:ProjectViewProjectNode" />
               <item name="Stratego" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="Controler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Stratego" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Stratego" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Stratego" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Stratego" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -181,18 +284,17 @@
       <option name="presentableId" value="Default" />
       <updated>1502886001998</updated>
       <workItem from="1502886003907" duration="5114000" />
-      <workItem from="1502905143615" duration="893000" />
+      <workItem from="1502905143615" duration="1559000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6007000" />
+    <option name="totallyTimeSpent" value="6673000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24305555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24305555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -225,7 +327,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1502986597000" expanded="true" signature="48:165" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -233,7 +337,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding />
+          <folding>
+            <marker date="1502986597000" expanded="true" signature="47:57" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -257,14 +363,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/Model/Game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -295,6 +393,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -306,19 +405,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="97" lean-forward="false" selection-start-line="4" selection-start-column="97" selection-end-line="4" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/Controler/LobbyController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1502986597000" expanded="true" signature="48:165" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -332,9 +425,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Controler/GameController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="240">
+          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <marker date="1502986597000" expanded="true" signature="47:57" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -358,10 +453,26 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="97" lean-forward="false" selection-start-line="4" selection-start-column="97" selection-end-line="4" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Model/Game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/View/GameView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="555">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
