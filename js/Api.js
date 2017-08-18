@@ -39,7 +39,7 @@ class StrategoApi{
     }
 
     setMove(id, move, callback){
-        $ajax({
+        $.ajax({
             url: this.url + '/games/' + id + '/moves' + this.ApiKey,
             type: 'POST',
             contentType: 'application/json',

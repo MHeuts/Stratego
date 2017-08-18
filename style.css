@@ -1,10 +1,18 @@
 .field{
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border: 1px solid black;
+    text-align: center;
 }
 
 .field img{
     width: 50px;
     height: 50px;
+    margin: auto;
 }
+
+.GameBoard{
+    background: url("../Stratego/img/board.jpg");
+    background-size: 612px 612px;
+}
+

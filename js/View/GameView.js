@@ -2,31 +2,21 @@ class GameView {
     constructor(container){
         this.container = document.getElementById(container);
         this.Board = document.createElement('table');
+        this.Board.className = "GameBoard";
         this.moveList = document.createElement('list');
-        this.Board.style.backgroundImage = "url('../Stratego/img/board.jpg')"
-        this.Board.style.backgroundSize = "810px 810px";
         this.Box = document.createElement('table');
         this.commit = document.createElement('button');
+        this.refresh = document.createElement('button');
         this.Header = document.createElement('h2');
         this.back = document.createElement('button');
         this.back.innerHTML = "Back to Lobby";
+        this.dragged = null;
     }
 
     show(){
-        this.Board.innerHTML = "";
-        for(var x = 0; x<=9 ; x++){
-            let row = document.createElement('tr');
-            this.Board.appendChild(row);
-            for( var y = 0; y<=9; y++){
-                let field = document.createElement('td');
-                field.id = x + ", " + y;
-                field.className = "field";
-                field.ondrop = this.drop(event);
-                field.ondragover = this.allowDrop(event);
-                row.appendChild(field);
-            }
-            this.Board.appendChild(row);
-        }
+        var self = this;
+        this.container.appendChild(this.moveList);
+
         this.container.innerHTML = "";
         this.container.appendChild(this.Board);
         this.buildBoard();
@@ -39,8 +29,6 @@ class GameView {
 
     }
 
-
-    
     buildBoard(Board){
         var self = this;
         for(var Rowindex in Board){
@@ -50,15 +38,18 @@ class GameView {
                 var id = Rowindex + ", " + ColumnIndex;
                 if (piece === "O") {
                     var image = document.createElement('img');
-                    image.src = "../Stratego/img/blue.png"
-
+                    image.src = "../Stratego/img/blue.png";
+                    image.draggable = false;
                     document.getElementById(Rowindex + ", " + ColumnIndex).appendChild(image);
                 }
                 else if(piece != 0){
                     var image = document.createElement('img');
-                    image.src = "../Stratego/img/red_" + piece + ".png"
+                    image.src = "../Stratego/img/red_" + piece + ".png";
                     image.draggable = "yes";
-                    image.
+
+                    image.addEventListener("dragstart", function (e) {
+                        self.dragged = e.target;
+                    })
                     document.getElementById(Rowindex + ", " + ColumnIndex).appendChild(image);
                 }
             }
@@ -80,16 +71,6 @@ class GameView {
         }
         this.commit.innerHTML = "Commit BoardLayout";
         this.container.appendChild(this.Box);
-    }
-
-    drag(ev){
-        ev.dataTransfer.setData("text", ev.target.id);
-    }
-
-    drop(ev){
-        ev.preventDefault();
-        let data = ev.dataTransfer.getData("text");
-        ev.target.appendChild(document.getElementById(data));
     }
 
     allowDrop(ev){

@@ -11,7 +11,30 @@ class GameController{
     }
 
     show(){
-        let self = this;
+        var self = this;
+        for(var x = 0; x<=9 ; x++){
+            let row = document.createElement('tr');
+            for( var y = 0; y<=9; y++){
+                let field = document.createElement('td');
+                field.id = x + ", " + y;
+                field.className = "field";
+                field.addEventListener("dragover", function (e) {
+                    e.preventDefault();
+                })
+                field.addEventListener("drop", function (e) {
+                    console.log("lift", self.View.dragged.parentNode.id);
+                    console.log("drop", field.id);
+                    self.makeMove(self.View.dragged.parentNode.id, field.id);
+                    e.preventDefault();
+                    self.View.dragged.parentNode.removeChild(self.View.dragged);
+                    e.target.appendChild(self.View.dragged);
+                });
+                field.ondragover = self.allowDrop(event);
+                row.appendChild(field);
+            }
+            this.View.Board.appendChild(row);
+        }
+
         console.log("gamescreen: ", this.Stratego.Game.id);
         this.setHeader();
         this.View.show();
@@ -103,8 +126,25 @@ class GameController{
         this.View.commit.innerHTML = "Make Move";
     }
 
-    makeMove(){
+    makeMove(start, end){
+        let move = {
+            "square":{
+            "row": parseInt(start.charAt(0)),
+            "column": parseInt(start.charAt(3))
+            },
+            "square_to":{
+                "row": parseInt(end.charAt(0)),
+                "column": parseInt(end.charAt(3))
+            }
+        }
+        this.Stratego.Api.setMove(this.Stratego.Game.id, move, function (data) {
+            console.log(data);
 
+        })
+    }
+
+    allowDrop(ev){
+        ev.preventDefault();
     }
 
 }
