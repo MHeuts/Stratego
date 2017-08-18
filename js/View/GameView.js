@@ -20,8 +20,7 @@ class GameView {
             for( var y = 0; y<=9; y++){
                 let field = document.createElement('td');
                 field.id = x + ", " + y;
-                field.style.width = "75px";
-                field.style.height = "75px";
+                field.className = "field";
                 row.appendChild(field);
             }
             this.Board.appendChild(row);
@@ -49,16 +48,12 @@ class GameView {
                 if (piece === "O") {
                     var image = document.createElement('img');
                     image.src = "../Stratego/img/blue.png"
-                    image.style.height = '75px';
-                    image.style.width = '75px';
 
                     document.getElementById(Rowindex + ", " + ColumnIndex).appendChild(image);
                 }
                 else if(piece != 0){
                     var image = document.createElement('img');
                     image.src = "../Stratego/img/red_" + piece + ".png"
-                    image.style.height = '75px';
-                    image.style.width = '75px';
 
                     document.getElementById(Rowindex + ", " + ColumnIndex).appendChild(image);
                 }
