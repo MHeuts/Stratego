@@ -44,7 +44,7 @@ class GameView {
                     image.src = "../Stratego/img/red_" + piece + ".png";
                     image.draggable = "yes";
                     image.className = "myPieces";
-
+                    image.id = piece;
                     image.addEventListener("dragstart", function (e) {
                         self.dragged = e.target;
                     })
@@ -56,7 +56,7 @@ class GameView {
 
     showBox(board){
         var self = this;
-
+        this.Box.innerHTML = "";
         for(var rowIndex in board){
             var boardRow = board[rowIndex];
             var row = document.createElement('tr');

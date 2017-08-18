@@ -80,10 +80,12 @@ class GameController{
                 field.addEventListener("drop", function (e) {
                     console.log("lift", self.View.dragged.parentNode.id);
                     console.log("drop", field.id);
-                    self.makeMove(self.View.dragged.parentNode.id, field.id);
-                    e.preventDefault();
-                    self.View.dragged.parentNode.removeChild(self.View.dragged);
-                    e.target.appendChild(self.View.dragged);
+                    if(self.View.dragged.id !== "B" && self.View.dragged. id !== "F" && field.id !== "4, 2" && field.id !== "4, 3" && field.id !== "5, 2" && field.id !== "5, 3" && field.id !== "4, 6" && field.id !== "4, 7" && field.id !== "5, 6" && field.id !== "5, 7") {
+                        self.makeMove(self.View.dragged.parentNode.id, field.id, self.View.dragged.id);
+                        e.preventDefault();
+                        self.View.dragged.parentNode.removeChild(self.View.dragged);
+                        e.target.appendChild(self.View.dragged);
+                    }
                 });
                 field.ondragover = self.allowDrop(event);
                 row.appendChild(field);
@@ -93,14 +95,14 @@ class GameController{
 
         console.log("gamescreen: ", this.Stratego.Game.id);
         this.View.show();
+
         this.runGame();
 
     }
 
     runGame(){
         this.setHeader();
-        this.View.refresh.remove();
-
+        this.View.container.appendChild(this.View.refresh);
         if(this.Stratego.Game.state === "waiting_for_pieces"){
             if (confirm('Do you wish to use a standard board?')){
                 this.setUpStandard();
@@ -133,8 +135,6 @@ class GameController{
                     this.View.Board.innerHTML = "";
                     this.Stratego.show("Lobby");
                 }
-            }else{
-                this.View.container.appendChild(this.View.refresh);
             }
         }
     }
@@ -150,8 +150,8 @@ class GameController{
 
     checkBoard(){
         var setup = [];
-        var boardRow = [];
         for(let row = 6; row < 10; row++){
+            var boardRow = [];
             for(let column = 0; column < 10; column++){
                 var pos = (row + ", " + column);
                 var piece = document.getElementById(pos).firstElementChild;
@@ -164,6 +164,7 @@ class GameController{
         }
 
         this.Board = setup;
+        this.View.commit.remove();
         this.setUpStandard();
     }
 
@@ -181,6 +182,7 @@ class GameController{
 
 
     makeMove(start, end, id){
+        console.log(id)
         if (this.Stratego.Game.state === "waiting_for_pieces")
             return;
         let self = this;
