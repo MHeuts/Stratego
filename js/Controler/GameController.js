@@ -38,7 +38,7 @@ class GameController{
         console.log("gamescreen: ", this.Stratego.Game.id);
         this.setHeader();
         this.View.show();
-        if(this.Stratego.Game.state == "waiting_for_pieces"){
+        if(this.Stratego.Game.state === "waiting_for_pieces"){
             if (confirm('Do you wish to use a standard board?')){
                 this.setUpStandard();
             }else{
@@ -50,6 +50,7 @@ class GameController{
     }
 
     setHeader(){
+        console.log('setHeader: ', this.Stratego.Game);
         this.View.Header.innerHTML = "GameId: " + this.Stratego.Game.id + " | VS: " + this.Stratego.Game.opponent + ", state: " + this.Stratego.Game.state;
     }
 
@@ -110,7 +111,7 @@ class GameController{
             console.log(data);
             self.Stratego.Game.openGame = data;
             self.Stratego.Game.Board = data.board;
-            self.setHeader();
+            self.runGame();
 
         });
     }
@@ -121,12 +122,36 @@ class GameController{
     }
 
     runGame(){
-        console.log(this.Stratego.Game.board);
+        this.setHeader();
         this.View.buildBoard(this.Stratego.Game.board);
-        this.View.commit.innerHTML = "Make Move";
+        this.View.Board.disabled = true;
+        let pieces = document.getElementsByClassName("myPieces");
+
+        for(var i = 0; i < pieces.length; i++){
+            pieces[i].draggable = false;
+        }
+
+        if(this.Stratego.Game.state === "my_turn"){
+            for(var i = 0; i < pieces.length; i++){
+                pieces[i].draggable = true;
+            }
+            this.View.Board.disabled = false;
+            console.log("run game",this.Stratego.Game);
+
+        }
+        else if(this.Stratego.Game.state === "game_over"){
+            console.log("Game OVer");
+            if (confirm('Game Over. \nThe winner = ' + this.Stratego.Game.winner + "\nDo you want to view the board")){
+
+            }else{
+                this.View.Board.innerHTML = "";
+                this.Stratego.show("Lobby");
+            }
+        }
     }
 
     makeMove(start, end){
+        let self = this;
         let move = {
             "square":{
             "row": parseInt(start.charAt(0)),
@@ -139,7 +164,8 @@ class GameController{
         }
         this.Stratego.Api.setMove(this.Stratego.Game.id, move, function (data) {
             console.log(data);
-
+            self.Stratego.Game.openGame = data.game;
+            self.runGame();
         })
     }
 

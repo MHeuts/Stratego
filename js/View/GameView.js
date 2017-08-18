@@ -36,21 +36,24 @@ class GameView {
             for(var ColumnIndex in row) {
                 var piece = row[ColumnIndex];
                 var id = Rowindex + ", " + ColumnIndex;
+                var field = document.getElementById(Rowindex + ", " + ColumnIndex);
+                field.innerHTML = "";
                 if (piece === "O") {
                     var image = document.createElement('img');
                     image.src = "../Stratego/img/blue.png";
                     image.draggable = false;
-                    document.getElementById(Rowindex + ", " + ColumnIndex).appendChild(image);
+                    field.appendChild(image);
                 }
                 else if(piece != 0){
                     var image = document.createElement('img');
                     image.src = "../Stratego/img/red_" + piece + ".png";
                     image.draggable = "yes";
+                    image.className = "myPieces";
 
                     image.addEventListener("dragstart", function (e) {
                         self.dragged = e.target;
                     })
-                    document.getElementById(Rowindex + ", " + ColumnIndex).appendChild(image);
+                    field.appendChild(image);
                 }
             }
         }
