@@ -3,6 +3,7 @@ class LobbyController{
         self = this;
         self.stratego = stratego;
         self.view = new lobbyView(this.stratego.container);
+
         self.view.logout.addEventListener('click', function() {
             self.stratego.show("Login");
         })
@@ -10,8 +11,9 @@ class LobbyController{
             self.createVsAi();
         });
         self.view.vsPlayer.addEventListener('click', function(){
-            self.createVsPlayer;
-        })
+            self.createVsPlayer();
+        });
+        this.waiting = false;
     }
 
     show(){
@@ -19,17 +21,18 @@ class LobbyController{
         while(this.view.list.firstChild){
             this.view.list.removeChild(this.view.list.firstChild);
         }
+        this.view.vsPlayer.disabled = false;
         let self = this;
-        console.log("Show Games");
         self.stratego.Api.getGames(function(data){
-            console.log("games", data);
             for(var index in data){
                 (function() {
                     let game = data[index];
                     let listItem = document.createElement('li');
-                    listItem.innerHTML = game.id + ", VS " + game.opponent + ", state: " + game.state;
+                    if(game.state === "waiting_for_an_opponent"){
+                        self.view.vsPlayer.disabled = true;
+                    }
+                    listItem.innerHTML = game.id + "\n\tVS " + game.opponent + "\n\tstate: " + game.state;
                     listItem.addEventListener('click', function(){
-                        console.log("Open Game: ", game);
                         self.stratego.Game.openGame = game;
                         self.stratego.show("Game");
                     });
@@ -40,7 +43,6 @@ class LobbyController{
 
         self.view.show();
     }
-
 
     createVsAi(){
         let self = this;

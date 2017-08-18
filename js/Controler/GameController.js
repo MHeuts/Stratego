@@ -3,60 +3,7 @@ class GameController{
         let self = this;
         this.Stratego = Stratego;
         this.View = new GameView(this.Stratego.container);
-
-        this.View.back.addEventListener('click', function () {
-            self.View.Board.innerHTML = "";
-            self.Stratego.show("Lobby");
-        });
-    }
-
-    show(){
-        var self = this;
-        for(var x = 0; x<=9 ; x++){
-            let row = document.createElement('tr');
-            for( var y = 0; y<=9; y++){
-                let field = document.createElement('td');
-                field.id = x + ", " + y;
-                field.className = "field";
-                field.addEventListener("dragover", function (e) {
-                    e.preventDefault();
-                })
-                field.addEventListener("drop", function (e) {
-                    console.log("lift", self.View.dragged.parentNode.id);
-                    console.log("drop", field.id);
-                    self.makeMove(self.View.dragged.parentNode.id, field.id);
-                    e.preventDefault();
-                    self.View.dragged.parentNode.removeChild(self.View.dragged);
-                    e.target.appendChild(self.View.dragged);
-                });
-                field.ondragover = self.allowDrop(event);
-                row.appendChild(field);
-            }
-            this.View.Board.appendChild(row);
-        }
-
-        console.log("gamescreen: ", this.Stratego.Game.id);
-        this.setHeader();
-        this.View.show();
-        if(this.Stratego.Game.state === "waiting_for_pieces"){
-            if (confirm('Do you wish to use a standard board?')){
-                this.setUpStandard();
-            }else{
-                self.setUpBoard();
-            }
-        }else{
-            this.runGame();
-        }
-    }
-
-    setHeader(){
-        console.log('setHeader: ', this.Stratego.Game);
-        this.View.Header.innerHTML = "GameId: " + this.Stratego.Game.id + " | VS: " + this.Stratego.Game.opponent + ", state: " + this.Stratego.Game.state;
-    }
-
-    setUpStandard(){
-        let self = this;
-        let board = [
+        this.Board = [
             [
                 "7",
                 "B",
@@ -107,7 +54,123 @@ class GameController{
             ]
         ];
 
-        this.Stratego.Api.setStartBoard(this.Stratego.Game.id, board, function(data){
+        this.View.back.addEventListener('click', function () {
+            self.View.Board.innerHTML = "";
+            self.Stratego.show("Lobby");
+        });
+        this.View.refresh.addEventListener('click', function () {
+            self.runGame();
+        })
+        this.View.commit.addEventListener('click', function () {
+            self.checkBoard();
+        })
+    }
+
+    show(){
+        var self = this;
+        for(var x = 0; x<=9 ; x++){
+            let row = document.createElement('tr');
+            for( var y = 0; y<=9; y++){
+                let field = document.createElement('td');
+                field.id = x + ", " + y;
+                field.className = "field";
+                field.addEventListener("dragover", function (e) {
+                    e.preventDefault();
+                })
+                field.addEventListener("drop", function (e) {
+                    console.log("lift", self.View.dragged.parentNode.id);
+                    console.log("drop", field.id);
+                    self.makeMove(self.View.dragged.parentNode.id, field.id);
+                    e.preventDefault();
+                    self.View.dragged.parentNode.removeChild(self.View.dragged);
+                    e.target.appendChild(self.View.dragged);
+                });
+                field.ondragover = self.allowDrop(event);
+                row.appendChild(field);
+            }
+            this.View.Board.appendChild(row);
+        }
+
+        console.log("gamescreen: ", this.Stratego.Game.id);
+        this.View.show();
+        this.runGame();
+
+    }
+
+    runGame(){
+        this.setHeader();
+        this.View.refresh.remove();
+
+        if(this.Stratego.Game.state === "waiting_for_pieces"){
+            if (confirm('Do you wish to use a standard board?')){
+                this.setUpStandard();
+            }else{
+                this.setUpBoard();
+            }
+        }
+        else{
+            this.View.buildBoard(this.Stratego.Game.board);
+
+            let pieces = document.getElementsByClassName("myPieces");
+
+            for(var i = 0; i < pieces.length; i++){
+                pieces[i].draggable = false;
+            }
+
+            if(this.Stratego.Game.state === "my_turn"){
+                for(var i = 0; i < pieces.length; i++){
+                    pieces[i].draggable = true;
+                }
+                this.View.Board.disabled = false;
+                console.log("run game",this.Stratego.Game);
+
+            }
+            else if(this.Stratego.Game.state === "game_over"){
+                console.log("Game OVer");
+                if (confirm('Game Over. \nThe winner = ' + this.Stratego.Game.winner + "\nDo you want to view the board")){
+
+                }else{
+                    this.View.Board.innerHTML = "";
+                    this.Stratego.show("Lobby");
+                }
+            }else{
+                this.View.container.appendChild(this.View.refresh);
+            }
+        }
+    }
+
+    setHeader(){
+        this.View.Header.innerHTML = "GameId: " + this.Stratego.Game.id + " | VS: " + this.Stratego.Game.opponent + ", state: " + this.Stratego.Game.state;
+    }
+
+    //todo
+    setUpBoard(){
+        this.View.showBox(this.Board);
+    }
+
+    checkBoard(){
+        var setup = [];
+        var boardRow = [];
+        for(let row = 6; row < 10; row++){
+            for(let column = 0; column < 10; column++){
+                var pos = (row + ", " + column);
+                var piece = document.getElementById(pos).firstElementChild;
+                console.log(piece);
+                boardRow[column] = (piece.id);
+                console.log(boardRow);
+            }
+            console.log(boardRow);
+            setup.push(boardRow);
+        }
+
+        this.Board = setup;
+        this.setUpStandard();
+    }
+
+    setUpStandard(){
+        let self = this;
+
+        this.Stratego.Api.setStartBoard(this.Stratego.Game.id, this.Board, function(data){
             console.log(data);
             self.Stratego.Game.openGame = data;
             self.Stratego.Game.Board = data.board;
@@ -116,41 +179,10 @@ class GameController{
         });
     }
 
-    //todo
-    setUpBoard(){
-        //this.View.showBox();
-    }
 
-    runGame(){
-        this.setHeader();
-        this.View.buildBoard(this.Stratego.Game.board);
-        this.View.Board.disabled = true;
-        let pieces = document.getElementsByClassName("myPieces");
-
-        for(var i = 0; i < pieces.length; i++){
-            pieces[i].draggable = false;
-        }
-
-        if(this.Stratego.Game.state === "my_turn"){
-            for(var i = 0; i < pieces.length; i++){
-                pieces[i].draggable = true;
-            }
-            this.View.Board.disabled = false;
-            console.log("run game",this.Stratego.Game);
-
-        }
-        else if(this.Stratego.Game.state === "game_over"){
-            console.log("Game OVer");
-            if (confirm('Game Over. \nThe winner = ' + this.Stratego.Game.winner + "\nDo you want to view the board")){
-
-            }else{
-                this.View.Board.innerHTML = "";
-                this.Stratego.show("Lobby");
-            }
-        }
-    }
-
-    makeMove(start, end){
+    makeMove(start, end, id){
+        if (this.Stratego.Game.state === "waiting_for_pieces")
+            return;
         let self = this;
         let move = {
             "square":{

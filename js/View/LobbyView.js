@@ -23,7 +23,6 @@ class lobbyView{
     }
 
     addgametoList(listItem){
-        console.log(listItem);
         this.list.appendChild(listItem);
     }
 }
