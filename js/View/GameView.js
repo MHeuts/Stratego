@@ -21,6 +21,8 @@ class GameView {
                 let field = document.createElement('td');
                 field.id = x + ", " + y;
                 field.className = "field";
+                field.ondrop = this.drop(event);
+                field.ondragover = this.allowDrop(event);
                 row.appendChild(field);
             }
             this.Board.appendChild(row);
@@ -40,6 +42,7 @@ class GameView {
 
     
     buildBoard(Board){
+        var self = this;
         for(var Rowindex in Board){
             var row = Board[Rowindex];
             for(var ColumnIndex in row) {
@@ -54,7 +57,8 @@ class GameView {
                 else if(piece != 0){
                     var image = document.createElement('img');
                     image.src = "../Stratego/img/red_" + piece + ".png"
-
+                    image.draggable = "yes";
+                    image.
                     document.getElementById(Rowindex + ", " + ColumnIndex).appendChild(image);
                 }
             }
@@ -84,11 +88,11 @@ class GameView {
 
     drop(ev){
         ev.preventDefault();
+        let data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
     }
 
     allowDrop(ev){
         ev.preventDefault();
-        var data = ev.dataTransfer.getData("text");
-        ev.target.appendChild(document.getElementById(data));
     }
 }
