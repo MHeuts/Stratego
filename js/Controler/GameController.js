@@ -80,7 +80,7 @@ class GameController{
                 field.addEventListener("drop", function (e) {
                     console.log("lift", self.View.dragged.parentNode.id);
                     console.log("drop", field.id);
-                    if(self.View.dragged.id !== "B" && self.View.dragged. id !== "F" && field.id !== "4, 2" && field.id !== "4, 3" && field.id !== "5, 2" && field.id !== "5, 3" && field.id !== "4, 6" && field.id !== "4, 7" && field.id !== "5, 6" && field.id !== "5, 7") {
+                    if(field.id !== "4, 2" && field.id !== "4, 3" && field.id !== "5, 2" && field.id !== "5, 3" && field.id !== "4, 6" && field.id !== "4, 7" && field.id !== "5, 6" && field.id !== "5, 7") {
                         self.makeMove(self.View.dragged.parentNode.id, field.id, self.View.dragged.id);
                         e.preventDefault();
                         self.View.dragged.parentNode.removeChild(self.View.dragged);
