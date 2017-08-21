@@ -92,23 +92,28 @@ class GameController{
                         return;
                     }
                     if(newField.hasChildNodes()) {
-                        console.log("has child");
+                        console.log("has child", newField.firstElementChild.className);
                         if (newField.firstElementChild.className === "myPieces") {
+                            console.log("cant place on own field");
                             return;
                         }
                     }
 
-                    console.log("lift", self.View.dragged.parentNode.id);
-                    console.log("drop", field.id);
-                    if(field.id !== "4, 2" && field.id !== "4, 3" && field.id !== "5, 2" && field.id !== "5, 3" && field.id !== "4, 6" && field.id !== "4, 7" && field.id !== "5, 6" && field.id !== "5, 7") {
-                        if(self.Stratego.Game.state !== "waiting_for_pieces"){
-                            self.makeMove(oldField.id, newField.id, piece.id);
+                    if(self.Stratego.Game.state === "my_turn"){
+                        if(field.id === "4, 2" && field.id === "4, 3" && field.id === "5, 2" && field.id === "5, 3" && field.id === "4, 6" && field.id === "4, 7" && field.id === "5, 6" && field.id === "5, 7") {
+                            return;
                         }
 
-                        e.preventDefault();
-                        self.View.dragged.parentNode.removeChild(self.View.dragged);
-                        e.target.appendChild(self.View.dragged);
+                        if(!piece.canMove(oldField.id.charAt(0), oldField.id.charAt(3), field.id.charAt(0), newField.id.charAt(3))){
+                            return;
+                        }
+                        self.makeMove(oldField.id, newField.id, piece.id);
                     }
+
+                    e.preventDefault();
+                    self.View.dragged.parentNode.removeChild(self.View.dragged);
+                    e.target.appendChild(self.View.dragged);
+
                 });
                 field.ondragover = self.allowDrop(event);
                 row.appendChild(field);

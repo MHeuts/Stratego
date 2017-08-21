@@ -67,6 +67,7 @@ class GameView {
                 var image = document.createElement('img');
                 image.src = "../Stratego/img/red_" + id + ".png";
                 image.id = id;
+                image.className = "myPieces";
                 image.addEventListener("dragstart", function (e) {
                     self.dragged = e.target;
                 })
