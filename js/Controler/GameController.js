@@ -59,7 +59,10 @@ class GameController{
             self.Stratego.show("Lobby");
         });
         this.View.refresh.addEventListener('click', function () {
-            self.runGame();
+             self.Stratego.Api.getGameById(Stratego.Game.id, function (data) {
+                self.Stratego.Game.openGame = data;
+                self.runGame();
+            });
         })
         this.View.commit.addEventListener('click', function () {
             self.checkBoard();
@@ -122,7 +125,6 @@ class GameController{
         }
 
         console.log("gamescreen: ", this.Stratego.Game.id);
-        this.View.show();
 
         this.runGame();
 
@@ -130,6 +132,7 @@ class GameController{
 
     runGame(){
         this.setHeader();
+        this.View.show();
         this.View.container.appendChild(this.View.refresh);
         if(this.Stratego.Game.state === "waiting_for_pieces"){
             if (confirm('Do you wish to use a standard board?')){
