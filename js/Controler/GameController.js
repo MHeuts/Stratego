@@ -76,12 +76,35 @@ class GameController{
                 field.className = "field";
                 field.addEventListener("dragover", function (e) {
                     e.preventDefault();
-                })
+                });
                 field.addEventListener("drop", function (e) {
+                    var piece = new pieceModel(self.View.dragged.id);
+                    var newField = field;
+                    var oldField = self.View.dragged.parentNode;
+                    if(self.Stratego.Game.state === "waiting_for_pieces"){
+                        if(!piece.canPlace(parseInt(newField.id.charAt(0)))){
+                            return;
+                        }
+                    }
+                    console.log("lift", oldField.id);
+                    console.log("drop", newField.id);
+                    if(newField.id === oldField.id){
+                        return;
+                    }
+                    if(newField.hasChildNodes()) {
+                        console.log("has child");
+                        if (newField.firstElementChild.className === "myPieces") {
+                            return;
+                        }
+                    }
+
                     console.log("lift", self.View.dragged.parentNode.id);
                     console.log("drop", field.id);
                     if(field.id !== "4, 2" && field.id !== "4, 3" && field.id !== "5, 2" && field.id !== "5, 3" && field.id !== "4, 6" && field.id !== "4, 7" && field.id !== "5, 6" && field.id !== "5, 7") {
-                        self.makeMove(self.View.dragged.parentNode.id, field.id, self.View.dragged.id);
+                        if(self.Stratego.Game.state !== "waiting_for_pieces"){
+                            self.makeMove(oldField.id, newField.id, piece.id);
+                        }
+
                         e.preventDefault();
                         self.View.dragged.parentNode.removeChild(self.View.dragged);
                         e.target.appendChild(self.View.dragged);
@@ -154,6 +177,10 @@ class GameController{
             var boardRow = [];
             for(let column = 0; column < 10; column++){
                 var pos = (row + ", " + column);
+                if(!document.getElementById(pos).hasChildNodes()){
+                    alert("Geen geldige Layout!");
+                    return;
+                }
                 var piece = document.getElementById(pos).firstElementChild;
                 console.log(piece);
                 boardRow[column] = (piece.id);
